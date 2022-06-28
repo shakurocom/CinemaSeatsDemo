@@ -9,21 +9,63 @@
 /* Begin PBXBuildFile section */
 		6B1E57C2286AEFEC00FF82C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1E57C1286AEFEC00FF82C5 /* AppDelegate.swift */; };
 		6B1E57C4286AEFEC00FF82C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1E57C3286AEFEC00FF82C5 /* SceneDelegate.swift */; };
-		6B1E57C6286AEFEC00FF82C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1E57C5286AEFEC00FF82C5 /* ViewController.swift */; };
 		6B1E57C9286AEFEC00FF82C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1E57C7286AEFEC00FF82C5 /* Main.storyboard */; };
 		6B1E57CB286AEFEE00FF82C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1E57CA286AEFEE00FF82C5 /* Assets.xcassets */; };
 		6B1E57CE286AEFEE00FF82C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1E57CC286AEFEE00FF82C5 /* LaunchScreen.storyboard */; };
+		6BC29397286AF120007B54E2 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29389286AF11F007B54E2 /* MovieInfo.swift */; };
+		6BC29398286AF120007B54E2 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2938A286AF11F007B54E2 /* PaymentViewController.swift */; };
+		6BC29399286AF120007B54E2 /* CinemaSheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2938B286AF11F007B54E2 /* CinemaSheduleCell.swift */; };
+		6BC2939A286AF120007B54E2 /* CinemaSeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2938C286AF11F007B54E2 /* CinemaSeatsViewController.swift */; };
+		6BC2939B286AF120007B54E2 /* HitTestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2938D286AF11F007B54E2 /* HitTestButton.swift */; };
+		6BC2939C286AF120007B54E2 /* String+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2938E286AF11F007B54E2 /* String+Index.swift */; };
+		6BC2939D286AF120007B54E2 /* SeatsSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2938F286AF11F007B54E2 /* SeatsSelector.swift */; };
+		6BC2939E286AF120007B54E2 /* CinemaSeatsAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC29390286AF120007B54E2 /* CinemaSeatsAssets.xcassets */; };
+		6BC2939F286AF120007B54E2 /* SeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29391286AF120007B54E2 /* SeatModel.swift */; };
+		6BC293A0286AF120007B54E2 /* TicketInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29392286AF120007B54E2 /* TicketInfoCell.swift */; };
+		6BC293A1286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29393286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift */; };
+		6BC293A2286AF120007B54E2 /* Cinema.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC29394286AF120007B54E2 /* Cinema.storyboard */; };
+		6BC293A3286AF120007B54E2 /* CinemaSheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC29395286AF120007B54E2 /* CinemaSheduleCell.xib */; };
+		6BC293A4286AF120007B54E2 /* CinemaStyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */; };
+		6BC293AA286AF792007B54E2 /* UIImage+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC293A8286AF792007B54E2 /* UIImage+Bundle.swift */; };
+		6BC293AB286AF792007B54E2 /* UIColor+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC293A9286AF792007B54E2 /* UIColor+Bundle.swift */; };
+		6BC293B2286AFB22007B54E2 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC293B0286AF98B007B54E2 /* Poppins-Bold.ttf */; };
+		6BC293B3286AFB24007B54E2 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC293AD286AF98B007B54E2 /* Poppins-Light.ttf */; };
+		6BC293B4286AFB26007B54E2 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC293AE286AF98B007B54E2 /* Poppins-Medium.ttf */; };
+		6BC293B5286AFB28007B54E2 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC293AF286AF98B007B54E2 /* Poppins-SemiBold.ttf */; };
+		6BC293B6286AFB2A007B54E2 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC293AC286AF972007B54E2 /* Poppins-Regular.ttf */; };
+		6BC293B8286AFB3B007B54E2 /* FontsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC293B7286AFB3B007B54E2 /* FontsLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B1E57BE286AEFEC00FF82C5 /* CinemaSeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaSeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1E57C1286AEFEC00FF82C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B1E57C3286AEFEC00FF82C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6B1E57C5286AEFEC00FF82C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B1E57C8286AEFEC00FF82C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B1E57CA286AEFEE00FF82C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B1E57CD286AEFEE00FF82C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B1E57CF286AEFEE00FF82C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BC29389286AF11F007B54E2 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		6BC2938A286AF11F007B54E2 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		6BC2938B286AF11F007B54E2 /* CinemaSheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinemaSheduleCell.swift; sourceTree = "<group>"; };
+		6BC2938C286AF11F007B54E2 /* CinemaSeatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinemaSeatsViewController.swift; sourceTree = "<group>"; };
+		6BC2938D286AF11F007B54E2 /* HitTestButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestButton.swift; sourceTree = "<group>"; };
+		6BC2938E286AF11F007B54E2 /* String+Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Index.swift"; sourceTree = "<group>"; };
+		6BC2938F286AF11F007B54E2 /* SeatsSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsSelector.swift; sourceTree = "<group>"; };
+		6BC29390286AF120007B54E2 /* CinemaSeatsAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CinemaSeatsAssets.xcassets; sourceTree = "<group>"; };
+		6BC29391286AF120007B54E2 /* SeatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatModel.swift; sourceTree = "<group>"; };
+		6BC29392286AF120007B54E2 /* TicketInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoCell.swift; sourceTree = "<group>"; };
+		6BC29393286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DissmissKeyboardOnTap.swift"; sourceTree = "<group>"; };
+		6BC29394286AF120007B54E2 /* Cinema.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cinema.storyboard; sourceTree = "<group>"; };
+		6BC29395286AF120007B54E2 /* CinemaSheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaSheduleCell.xib; sourceTree = "<group>"; };
+		6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinemaStyleSheet.swift; sourceTree = "<group>"; };
+		6BC293A8286AF792007B54E2 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
+		6BC293A9286AF792007B54E2 /* UIColor+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Bundle.swift"; sourceTree = "<group>"; };
+		6BC293AC286AF972007B54E2 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		6BC293AD286AF98B007B54E2 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		6BC293AE286AF98B007B54E2 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		6BC293AF286AF98B007B54E2 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		6BC293B0286AF98B007B54E2 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		6BC293B7286AFB3B007B54E2 /* FontsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +82,8 @@
 		6B1E57B5286AEFEC00FF82C5 = {
 			isa = PBXGroup;
 			children = (
-				6B1E57C0286AEFEC00FF82C5 /* CinemaSeats */,
+				6B1E57D5286AEFFC00FF82C5 /* CinemaSeatsControl */,
+				6B1E57C0286AEFEC00FF82C5 /* CinemaSeatsDemo */,
 				6B1E57BF286AEFEC00FF82C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,18 +96,102 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6B1E57C0286AEFEC00FF82C5 /* CinemaSeats */ = {
+		6B1E57C0286AEFEC00FF82C5 /* CinemaSeatsDemo */ = {
 			isa = PBXGroup;
 			children = (
 				6B1E57C1286AEFEC00FF82C5 /* AppDelegate.swift */,
 				6B1E57C3286AEFEC00FF82C5 /* SceneDelegate.swift */,
-				6B1E57C5286AEFEC00FF82C5 /* ViewController.swift */,
-				6B1E57C7286AEFEC00FF82C5 /* Main.storyboard */,
+				6B1E57D6286AF01100FF82C5 /* Resources */,
+			);
+			path = CinemaSeatsDemo;
+			sourceTree = "<group>";
+		};
+		6B1E57D5286AEFFC00FF82C5 /* CinemaSeatsControl */ = {
+			isa = PBXGroup;
+			children = (
+				6B1E57D7286AF04B00FF82C5 /* Source */,
+				6B1E57D8286AF05000FF82C5 /* Resources */,
+			);
+			path = CinemaSeatsControl;
+			sourceTree = "<group>";
+		};
+		6B1E57D6286AF01100FF82C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6B1E57CF286AEFEE00FF82C5 /* Info.plist */,
+				6BC29394286AF120007B54E2 /* Cinema.storyboard */,
 				6B1E57CA286AEFEE00FF82C5 /* Assets.xcassets */,
 				6B1E57CC286AEFEE00FF82C5 /* LaunchScreen.storyboard */,
-				6B1E57CF286AEFEE00FF82C5 /* Info.plist */,
+				6B1E57C7286AEFEC00FF82C5 /* Main.storyboard */,
 			);
-			path = CinemaSeats;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6B1E57D7286AF04B00FF82C5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6BC293B7286AFB3B007B54E2 /* FontsLoader.swift */,
+				6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */,
+				6BC2938D286AF11F007B54E2 /* HitTestButton.swift */,
+				6BC29389286AF11F007B54E2 /* MovieInfo.swift */,
+				6BC29391286AF120007B54E2 /* SeatModel.swift */,
+				6BC2938F286AF11F007B54E2 /* SeatsSelector.swift */,
+				6BC293A7286AF698007B54E2 /* Cells */,
+				6BC293A6286AF67E007B54E2 /* Controllers */,
+				6BC293A5286AF149007B54E2 /* Extensions */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6B1E57D8286AF05000FF82C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6BC29390286AF120007B54E2 /* CinemaSeatsAssets.xcassets */,
+				6BC29395286AF120007B54E2 /* CinemaSheduleCell.xib */,
+				6BC293B1286AF990007B54E2 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6BC293A5286AF149007B54E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BC2938E286AF11F007B54E2 /* String+Index.swift */,
+				6BC293A9286AF792007B54E2 /* UIColor+Bundle.swift */,
+				6BC293A8286AF792007B54E2 /* UIImage+Bundle.swift */,
+				6BC29393286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6BC293A6286AF67E007B54E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6BC2938C286AF11F007B54E2 /* CinemaSeatsViewController.swift */,
+				6BC2938A286AF11F007B54E2 /* PaymentViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6BC293A7286AF698007B54E2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6BC2938B286AF11F007B54E2 /* CinemaSheduleCell.swift */,
+				6BC29392286AF120007B54E2 /* TicketInfoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6BC293B1286AF990007B54E2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6BC293B0286AF98B007B54E2 /* Poppins-Bold.ttf */,
+				6BC293AD286AF98B007B54E2 /* Poppins-Light.ttf */,
+				6BC293AE286AF98B007B54E2 /* Poppins-Medium.ttf */,
+				6BC293AF286AF98B007B54E2 /* Poppins-SemiBold.ttf */,
+				6BC293AC286AF972007B54E2 /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +252,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC293A2286AF120007B54E2 /* Cinema.storyboard in Resources */,
 				6B1E57CE286AEFEE00FF82C5 /* LaunchScreen.storyboard in Resources */,
+				6BC293B2286AFB22007B54E2 /* Poppins-Bold.ttf in Resources */,
+				6BC293B3286AFB24007B54E2 /* Poppins-Light.ttf in Resources */,
+				6BC2939E286AF120007B54E2 /* CinemaSeatsAssets.xcassets in Resources */,
+				6BC293B5286AFB28007B54E2 /* Poppins-SemiBold.ttf in Resources */,
 				6B1E57CB286AEFEE00FF82C5 /* Assets.xcassets in Resources */,
+				6BC293B4286AFB26007B54E2 /* Poppins-Medium.ttf in Resources */,
+				6BC293B6286AFB2A007B54E2 /* Poppins-Regular.ttf in Resources */,
 				6B1E57C9286AEFEC00FF82C5 /* Main.storyboard in Resources */,
+				6BC293A3286AF120007B54E2 /* CinemaSheduleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +273,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B1E57C6286AEFEC00FF82C5 /* ViewController.swift in Sources */,
 				6B1E57C2286AEFEC00FF82C5 /* AppDelegate.swift in Sources */,
+				6BC2939C286AF120007B54E2 /* String+Index.swift in Sources */,
+				6BC2939A286AF120007B54E2 /* CinemaSeatsViewController.swift in Sources */,
+				6BC29398286AF120007B54E2 /* PaymentViewController.swift in Sources */,
+				6BC29397286AF120007B54E2 /* MovieInfo.swift in Sources */,
+				6BC293AB286AF792007B54E2 /* UIColor+Bundle.swift in Sources */,
 				6B1E57C4286AEFEC00FF82C5 /* SceneDelegate.swift in Sources */,
+				6BC293A1286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift in Sources */,
+				6BC293A0286AF120007B54E2 /* TicketInfoCell.swift in Sources */,
+				6BC2939F286AF120007B54E2 /* SeatModel.swift in Sources */,
+				6BC293A4286AF120007B54E2 /* CinemaStyleSheet.swift in Sources */,
+				6BC29399286AF120007B54E2 /* CinemaSheduleCell.swift in Sources */,
+				6BC2939B286AF120007B54E2 /* HitTestButton.swift in Sources */,
+				6BC293B8286AFB3B007B54E2 /* FontsLoader.swift in Sources */,
+				6BC2939D286AF120007B54E2 /* SeatsSelector.swift in Sources */,
+				6BC293AA286AF792007B54E2 /* UIImage+Bundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +437,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MW2UF479VW;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CinemaSeats/Info.plist;
+				INFOPLIST_FILE = CinemaSeatsDemo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +465,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MW2UF479VW;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CinemaSeats/Info.plist;
+				INFOPLIST_FILE = CinemaSeatsDemo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CinemaSheduleCell" customModule="Shakuro_Apps" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CinemaSheduleCell" id="Klt-jf-3As" customClass="CinemaSheduleCell" customModule="Shakuro_Apps" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="293" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hjU-ec-ul8">
+                <rect key="frame" x="0.0" y="0.0" width="293" height="81"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-ob-fJ6">
+                        <rect key="frame" x="8" y="0.0" width="285" height="81"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="LcX-ob-fJ6" secondAttribute="trailing" id="BbA-jC-kLc"/>
+                    <constraint firstItem="LcX-ob-fJ6" firstAttribute="leading" secondItem="hjU-ec-ul8" secondAttribute="leading" constant="8" id="On6-IO-0Pg"/>
+                    <constraint firstItem="LcX-ob-fJ6" firstAttribute="top" secondItem="hjU-ec-ul8" secondAttribute="top" id="Utg-wQ-bh9"/>
+                    <constraint firstAttribute="bottom" secondItem="LcX-ob-fJ6" secondAttribute="bottom" id="bVb-8t-cZR"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="293" height="81"/>
+            <connections>
+                <outlet property="timeTitle" destination="LcX-ob-fJ6" id="4cX-6l-H7C"/>
+            </connections>
+            <point key="canvasLocation" x="313.768115942029" y="152.34375"/>
+        </collectionViewCell>
+    </objects>
+</document>

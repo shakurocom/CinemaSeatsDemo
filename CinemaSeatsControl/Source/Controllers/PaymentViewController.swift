@@ -1,0 +1,195 @@
+//
+//  PaymentViewController.swift
+//  ShakuroApp
+
+import UIKit
+import Shakuro_iOS_Toolbox
+
+class PaymentViewController: UIViewController, BaseViewControllerProtocol {
+
+    struct Option {
+        let paymentInfo: [Info]
+        let ticketInfo: [Info]
+    }
+
+    @IBOutlet private var topView: UIView!
+    @IBOutlet private var topLabel: UILabel!
+    @IBOutlet private var confirmButton: ContentModeSelectButton!
+    @IBOutlet private var backButton: UIButton!
+    @IBOutlet private var scrollView: UIScrollView!
+
+    @IBOutlet private var infoLabel: UILabel!
+    @IBOutlet private var infoTableView: UITableView!
+
+    @IBOutlet private var summaryLabel: UILabel!
+    @IBOutlet private var summaryTableView: UITableView!
+
+    @IBOutlet private var contactDetailsView: UIView!
+    @IBOutlet private var contactDetailsLabel: UILabel!
+    @IBOutlet private var contactDetailsValueLabel: UILabel!
+    @IBOutlet private var emailTextField: UITextField!
+    @IBOutlet private var telephoneTextField: UITextField!
+
+    @IBOutlet private var paymentLabel: UILabel!
+    @IBOutlet private var paymentView: UIView!
+    @IBOutlet private var privacyLabel: UILabel!
+
+    @IBOutlet private var infoTableViewHeight: NSLayoutConstraint!
+    @IBOutlet private var summaryTableViewHeight: NSLayoutConstraint!
+    @IBOutlet private var contentViewBottomConstraint: NSLayoutConstraint!
+
+    private var paymentInfo: [Info] = []
+    private var ticketInfo: [Info] = []
+
+    private weak var appRouter: RoutingSupport?
+    private var keyboardHandler: KeyboardHandler?
+
+    static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
+        let viewController = R.unwrap({ R.storyboard.cinema.paymentViewController() })
+        viewController.paymentInfo = options.paymentInfo
+        viewController.ticketInfo = options.ticketInfo
+        viewController.appRouter = coordinator
+        viewController.modalPresentationStyle = .fullScreen
+        return viewController
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        scrollView.contentInsetAdjustmentBehavior = .never
+        setupUI()
+        setActorData()
+
+        keyboardHandler = KeyboardHandler(enableCurveHack: true, heightDidChange: { [weak self] (change: KeyboardHandler.KeyboardChange) in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.contentViewBottomConstraint.constant = change.newHeight
+            strongSelf.view.layoutIfNeeded()
+        })
+
+        hideKeyboardWhenTappedAround()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        keyboardHandler?.isActive = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        view.endEditing(true)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        keyboardHandler?.isActive = false
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        infoTableViewHeight.constant = infoTableView.contentSize.height
+        summaryTableViewHeight.constant = summaryTableView.contentSize.height
+    }
+
+}
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
+extension PaymentViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch tableView {
+        case infoTableView:
+            return paymentInfo.count
+        case summaryTableView:
+            return ticketInfo.count
+        default:
+            return 1
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView === infoTableView {
+            let cell: InfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: R.reuseIdentifier.infoCell.identifier)
+            cell.setInfo(info: paymentInfo[indexPath.row])
+            return cell
+        } else {
+            let cell: TicketInfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: R.reuseIdentifier.ticketInfoCell.identifier)
+            cell.setInfo(info: ticketInfo[indexPath.row])
+            if indexPath.row == ticketInfo.count - 1 {
+                cell.setUI()
+            }
+            return cell
+        }
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension PaymentViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        _ = textField.resignFirstResponder()
+        return false
+    }
+}
+
+// MARK: - Actions
+
+private extension PaymentViewController {
+
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        appRouter?.appRouter.dismissViewController(self, animated: true)
+    }
+
+}
+
+// MARK: - Private
+
+private extension PaymentViewController {
+
+    private func setupUI() {
+        topView.clipsToBounds = true
+        topView.layer.cornerRadius = 32
+        topView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+
+        infoTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: infoTableView.frame.size.width, height: 1))
+        summaryTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: summaryTableView.frame.size.width, height: 1))
+        infoTableView.tableFooterView?.backgroundColor = UIColor.white
+        summaryTableView.tableFooterView?.backgroundColor = UIColor.white
+        infoTableView.layer.cornerRadius = 8
+        summaryTableView.layer.cornerRadius = 8
+        contactDetailsView.layer.cornerRadius = 8
+        paymentView.layer.cornerRadius = 8
+
+        infoLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
+        summaryLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
+        contactDetailsLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
+        paymentLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
+        emailTextField.font = CinemaStyleSheet.FontFace.poppinsRegular.fontWithSize(14)
+        telephoneTextField.font = CinemaStyleSheet.FontFace.poppinsRegular.fontWithSize(14)
+        contactDetailsValueLabel.font = CinemaStyleSheet.FontFace.poppinsRegular.fontWithSize(12)
+        summaryLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
+
+        topLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
+        backButton.titleLabel?.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(16)
+        confirmButton.titleLabel?.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(16)
+        confirmButton.isSelected = true
+    }
+
+    private func setActorData() {
+        infoLabel.text = "Details"
+        summaryLabel.text = NSLocalizedString("Summary", comment: "")
+        contactDetailsLabel.text = NSLocalizedString("Contact details", comment: "")
+        contactDetailsValueLabel.text = NSLocalizedString("Enter an email or phone number to send you information about ordering", comment: "")
+        paymentLabel.text = NSLocalizedString("Payment", comment: "")
+        topLabel.text = NSLocalizedString("Payment", comment: "")
+        privacyLabel.text = NSLocalizedString("I have read and accept the Terms of Service and Privacy Policy", comment: "")
+
+        backButton.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
+        confirmButton.setTitle(NSLocalizedString("Confirm & Pay", comment: ""), for: .normal)
+    }
+}
