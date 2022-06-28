@@ -2,10 +2,20 @@
 //  PaymentViewController.swift
 //  ShakuroApp
 
+import Shakuro_CommonTypes
 import UIKit
-import Shakuro_iOS_Toolbox
 
-class PaymentViewController: UIViewController, BaseViewControllerProtocol {
+class Info {
+    let title: String?
+    let value: String?
+
+    init(title: String?, value: String?) {
+        self.title = title
+        self.value = value
+    }
+}
+
+class PaymentViewController: UIViewController {
 
     struct Option {
         let paymentInfo: [Info]
@@ -38,20 +48,10 @@ class PaymentViewController: UIViewController, BaseViewControllerProtocol {
     @IBOutlet private var summaryTableViewHeight: NSLayoutConstraint!
     @IBOutlet private var contentViewBottomConstraint: NSLayoutConstraint!
 
-    private var paymentInfo: [Info] = []
-    private var ticketInfo: [Info] = []
+    var paymentInfo: [Info] = []
+    var ticketInfo: [Info] = []
 
-    private weak var appRouter: RoutingSupport?
     private var keyboardHandler: KeyboardHandler?
-
-    static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
-        let viewController = R.unwrap({ R.storyboard.cinema.paymentViewController() })
-        viewController.paymentInfo = options.paymentInfo
-        viewController.ticketInfo = options.ticketInfo
-        viewController.appRouter = coordinator
-        viewController.modalPresentationStyle = .fullScreen
-        return viewController
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,11 +114,11 @@ extension PaymentViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView === infoTableView {
-            let cell: InfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: R.reuseIdentifier.infoCell.identifier)
+            let cell: InfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: "InfoCell")
             cell.setInfo(info: paymentInfo[indexPath.row])
             return cell
         } else {
-            let cell: TicketInfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: R.reuseIdentifier.ticketInfoCell.identifier)
+            let cell: TicketInfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: "TicketInfoCell")
             cell.setInfo(info: ticketInfo[indexPath.row])
             if indexPath.row == ticketInfo.count - 1 {
                 cell.setUI()
@@ -142,7 +142,7 @@ extension PaymentViewController: UITextFieldDelegate {
 private extension PaymentViewController {
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        appRouter?.appRouter.dismissViewController(self, animated: true)
+        dismiss(animated: true)
     }
 
 }

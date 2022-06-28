@@ -5,7 +5,7 @@
 import Foundation
 import UIKit
 
-class CinemaSeatsViewController: UIViewController, BaseViewControllerProtocol, SeatSelectorDelegate {
+class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
 
     struct Option {
         let info: MovieInfo
@@ -35,7 +35,6 @@ class CinemaSeatsViewController: UIViewController, BaseViewControllerProtocol, S
     @IBOutlet private var availableLabel: UILabel!
     @IBOutlet private var selectedLabel: UILabel!
 
-    private weak var appRouter: RoutingSupport?
     private var info: MovieInfo!
     private var currency: CGFloat = 0
     private var convinience: CGFloat = 0
@@ -98,7 +97,7 @@ extension CinemaSeatsViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CinemaSheduleCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.cinemaSheduleCell.identifier, for: indexPath)
+        let cell: CinemaSheduleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CinemaSheduleCell", for: indexPath)
         cell.title = info.sheduleDates[indexPath.item].rawValue
         return cell
     }
@@ -142,7 +141,14 @@ private extension CinemaSeatsViewController {
         cinemaSheduleCollectionView.showsHorizontalScrollIndicator = false
         cinemaSheduleCollectionView.backgroundColor = UIColor.clear
         cinemaSheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        cinemaSheduleCollectionView.register(R.nib.cinemaSheduleCell)
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: CinemaSeatsViewController.self).url(forResource: "CinemaSeats", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        cinemaSheduleCollectionView.register(UINib(nibName: "CinemaSheduleCell", bundle: bundle), forCellWithReuseIdentifier: "CinemaSheduleCell")
 
         let cinemaSheduleContainer = UIView(frame: cinemaSheduleCollectionView.bounds)
         cinemaSheduleContainer.backgroundColor = UIColor.clear
@@ -212,7 +218,7 @@ private extension CinemaSeatsViewController {
     // MARK: Actions
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        appRouter?.appRouter.dismissViewController(self, animated: true)
+        dismiss(animated: true)
     }
 
     @IBAction func buyButtonPressed(_ sender: UIButton) {
@@ -226,11 +232,18 @@ private extension CinemaSeatsViewController {
                                  Info(title: NSLocalizedString("Convenience fee", comment: ""), value: "\(convinience) USD"),
                                  Info(title: NSLocalizedString("Total", comment: ""), value: "\(currency + convinience) USD")]
 
-        _ = appRouter?.presentViewController(type: PaymentViewController.self,
-                                             options: PaymentViewController.Option(paymentInfo: paymentInfo, ticketInfo: ticketInfo),
-                                             from: self,
-                                             style: .modalDefault,
-                                             animated: true)
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: PaymentViewController.self).url(forResource: "CinemaSeats", withExtension: "bundle"),
+        let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        let viewController = PaymentViewController(nibName: "PaymentViewController", bundle: bundle)
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.paymentInfo = paymentInfo
+        viewController.ticketInfo = ticketInfo
+        present(viewController, animated: true)
     }
 
 }

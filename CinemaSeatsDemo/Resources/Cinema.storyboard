@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qqe-ZW-Xg4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +13,7 @@
         <!--Cinema Seats View Controller-->
         <scene sceneID="gsZ-Xb-8pp">
             <objects>
-                <viewController storyboardIdentifier="CinemaSeatsViewController" id="qqe-ZW-Xg4" customClass="CinemaSeatsViewController" customModule="Shakuro_Apps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CinemaSeatsViewController" id="qqe-ZW-Xg4" customClass="CinemaSeatsViewController" customModule="CinemaSeats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qgw-2s-sQ9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1u6-jo-v2v" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fk-DA-6fe" userLabel="InfoView">
-                                                <rect key="frame" x="0.0" y="204" width="414" height="62"/>
+                                                <rect key="frame" x="0.0" y="248" width="414" height="62"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-ol-zbh" userLabel="LeftView">
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="62"/>
@@ -96,7 +96,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOg-Af-xSj" userLabel="ContainerInfo2View">
-                                                <rect key="frame" x="0.0" y="56" width="414" height="164"/>
+                                                <rect key="frame" x="0.0" y="100" width="414" height="164"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, 17 May" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b99-lk-d47">
                                                         <rect key="frame" x="16" y="44" width="382" height="21.5"/>
@@ -133,16 +133,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHr-we-T3j" userLabel="ContainerInfo1View">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Wick: Chapter 3 - Parabellum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zm5-Zd-Z15">
-                                                        <rect key="frame" x="16" y="20" width="382" height="21.5"/>
+                                                        <rect key="frame" x="16" y="64" width="382" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA, 2019 / 2h 10min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-gW-ybT">
-                                                        <rect key="frame" x="16" y="45.5" width="382" height="14.5"/>
+                                                        <rect key="frame" x="16" y="89.5" width="382" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="xcw-gW-ybT" firstAttribute="leading" secondItem="FHr-we-T3j" secondAttribute="leading" constant="16" id="ATH-Tk-MeV"/>
-                                                    <constraint firstItem="zm5-Zd-Z15" firstAttribute="top" secondItem="FHr-we-T3j" secondAttribute="top" constant="20" id="KTn-gV-tY5"/>
+                                                    <constraint firstItem="zm5-Zd-Z15" firstAttribute="top" secondItem="FHr-we-T3j" secondAttribute="top" constant="64" id="KTn-gV-tY5"/>
                                                     <constraint firstItem="xcw-gW-ybT" firstAttribute="top" secondItem="zm5-Zd-Z15" secondAttribute="bottom" constant="4" id="Nq4-iO-r1x"/>
                                                     <constraint firstAttribute="bottom" secondItem="xcw-gW-ybT" secondAttribute="bottom" constant="24" id="PAz-ML-z4d"/>
                                                     <constraint firstItem="zm5-Zd-Z15" firstAttribute="leading" secondItem="FHr-we-T3j" secondAttribute="leading" constant="16" id="dUY-Kb-JSr"/>
@@ -160,9 +160,9 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usk-HB-SJ1">
-                                                <rect key="frame" x="0.0" y="266" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="310" width="414" height="320"/>
                                                 <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csr-0a-8Ur" customClass="SeatSelector" customModule="Shakuro_Apps" customModuleProvider="target">
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csr-0a-8Ur" customClass="SeatSelector" customModule="CinemaSeats" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                                                         <color key="backgroundColor" name="CinemaBackground"/>
                                                         <constraints>
@@ -182,7 +182,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYY-K2-15u" userLabel="PaymentView">
-                                                <rect key="frame" x="0.0" y="586" width="414" height="88"/>
+                                                <rect key="frame" x="0.0" y="630" width="414" height="88"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.45 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRY-DM-Glr">
                                                         <rect key="frame" x="16" y="37.5" width="84" height="21"/>
@@ -225,7 +225,7 @@
                                                 </constraints>
                                             </view>
                                             <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikh-8o-Wf7" userLabel="SeparatorView">
-                                                <rect key="frame" x="0.0" y="586" width="414" height="1"/>
+                                                <rect key="frame" x="0.0" y="630" width="414" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="G5J-PV-i62"/>
@@ -301,7 +301,7 @@
         <!--Payment View Controller-->
         <scene sceneID="5vB-L3-lvC">
             <objects>
-                <viewController storyboardIdentifier="PaymentViewController" id="8Px-TP-0o3" customClass="PaymentViewController" customModule="Shakuro_Apps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentViewController" id="8Px-TP-0o3" customClass="PaymentViewController" customModule="CinemaSeats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G94-LT-R4Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,8 +325,8 @@
                                                     <constraint firstAttribute="height" constant="363" id="FMF-w9-myc"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="56" id="yGN-6Q-097" customClass="InfoCell" customModule="Shakuro_Apps" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="382" height="56"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="56" id="yGN-6Q-097" customClass="InfoCell" customModule="CinemaSeats" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44.5" width="382" height="56"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yGN-6Q-097" id="iMB-o9-Dni">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
@@ -465,8 +465,8 @@ and Privacy Policy</string>
                                                 </constraints>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TicketInfoCell" rowHeight="43.5" id="py4-Xa-Uz1" customClass="TicketInfoCell" customModule="Shakuro_Apps" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="382" height="43.5"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TicketInfoCell" rowHeight="43.5" id="py4-Xa-Uz1" customClass="TicketInfoCell" customModule="CinemaSeats" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44.5" width="382" height="43.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="py4-Xa-Uz1" id="G4t-ex-02H">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
@@ -606,7 +606,7 @@ information about ordering</string>
                                             <constraint firstAttribute="trailing" secondItem="n2T-G1-2VZ" secondAttribute="trailing" id="yvj-Aw-UJS"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixR-Og-Pos" userLabel="PayButton" customClass="ContentModeSelectButton" customModule="Shakuro_Apps" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixR-Og-Pos" userLabel="PayButton" customClass="ContentModeSelectButton" customModule="CinemaSeats" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1170.5" width="382" height="48"/>
                                         <color key="backgroundColor" name="BlueButton"/>
                                         <constraints>
@@ -648,7 +648,7 @@ information about ordering</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LP8-1y-vRH" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8C-FR-yES" customClass="StateAlphaButton" customModule="Shakuro_Apps" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8C-FR-yES" customClass="StateAlphaButton" customModule="CinemaSeats" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="88" height="61"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -729,7 +729,7 @@ information about ordering</string>
         <image name="selectedMidSeat" width="12" height="12"/>
         <image name="telephone" width="18" height="18"/>
         <namedColor name="AccentColor">
-            <color red="0.17254901960784313" green="0.17254901960784313" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Bg200">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
