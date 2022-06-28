@@ -155,9 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				6B1E57CF286AEFEE00FF82C5 /* Info.plist */,
-				6BC29394286AF120007B54E2 /* Cinema.storyboard */,
 				6B1E57CA286AEFEE00FF82C5 /* Assets.xcassets */,
-				6B1E57CC286AEFEE00FF82C5 /* LaunchScreen.storyboard */,
+				6B5A1085286B3B4100EBE921 /* UI */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -167,10 +166,8 @@
 			children = (
 				6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */,
 				6BC293B7286AFB3B007B54E2 /* FontsLoader.swift */,
-				6BC2938D286AF11F007B54E2 /* HitTestButton.swift */,
 				6BC29389286AF11F007B54E2 /* MovieInfo.swift */,
 				6BC29391286AF120007B54E2 /* SeatModel.swift */,
-				6BC2938F286AF11F007B54E2 /* SeatsSelector.swift */,
 				6BC293A7286AF698007B54E2 /* Cells */,
 				6BC293A6286AF67E007B54E2 /* Controllers */,
 				6BC293BD286B0545007B54E2 /* Controls */,
@@ -183,14 +180,39 @@
 			isa = PBXGroup;
 			children = (
 				6BC29390286AF120007B54E2 /* CinemaSeatsAssets.xcassets */,
-				6BC293C2286B1488007B54E2 /* CinemaSeatsViewController.xib */,
-				6BC29395286AF120007B54E2 /* CinemaSheduleCell.xib */,
-				6BC293C9286B22C9007B54E2 /* InfoCell.xib */,
-				6BC293C0286B0F70007B54E2 /* PaymentViewController.xib */,
-				6BC293CA286B22C9007B54E2 /* TicketInfoCell.xib */,
+				6B5A1087286B3B6300EBE921 /* Cells */,
+				6B5A1086286B3B5A00EBE921 /* Controllers */,
 				6BC293B1286AF990007B54E2 /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6B5A1085286B3B4100EBE921 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6BC29394286AF120007B54E2 /* Cinema.storyboard */,
+				6B1E57CC286AEFEE00FF82C5 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6B5A1086286B3B5A00EBE921 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6BC293C2286B1488007B54E2 /* CinemaSeatsViewController.xib */,
+				6BC293C0286B0F70007B54E2 /* PaymentViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6B5A1087286B3B6300EBE921 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6BC29395286AF120007B54E2 /* CinemaSheduleCell.xib */,
+				6BC293C9286B22C9007B54E2 /* InfoCell.xib */,
+				6BC293CA286B22C9007B54E2 /* TicketInfoCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		6BC293A5286AF149007B54E2 /* Extensions */ = {
@@ -238,8 +260,10 @@
 		6BC293BD286B0545007B54E2 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				6BC293BB286B0537007B54E2 /* StateAlphaButton.swift */,
 				6BC293B9286B04ED007B54E2 /* ContentModeSelectButton.swift */,
+				6BC2938D286AF11F007B54E2 /* HitTestButton.swift */,
+				6BC2938F286AF11F007B54E2 /* SeatsSelector.swift */,
+				6BC293BB286B0537007B54E2 /* StateAlphaButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
