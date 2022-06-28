@@ -5,7 +5,7 @@
 import Foundation
 import UIKit
 
-class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
+public class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
 
     struct Option {
         let info: MovieInfo
@@ -41,11 +41,11 @@ class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
     private var selectedSeats: Int = 0
     private var selectedTimeIndex: Int = 0
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         buyButton.isHidden = true
 
@@ -60,7 +60,7 @@ class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
@@ -88,21 +88,21 @@ class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
 
 extension CinemaSeatsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return info.sheduleDates.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CinemaSheduleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CinemaSheduleCell", for: indexPath)
         cell.title = info.sheduleDates[indexPath.item].rawValue
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedTimeIndex = indexPath.item
         seatSelector.setupSeats(SeatModel.generate(for: info.sheduleDates[selectedTimeIndex]))
     }
