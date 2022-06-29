@@ -156,12 +156,23 @@ private extension PaymentViewController {
         topView.layer.cornerRadius = 32
         topView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: PaymentViewController.self).url(forResource: "CinemaSeats", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        infoTableView.register(UINib(nibName: "InfoCell", bundle: bundle), forCellReuseIdentifier: "InfoCell")
         infoTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: infoTableView.frame.size.width, height: 1))
-        summaryTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: summaryTableView.frame.size.width, height: 1))
         infoTableView.tableFooterView?.backgroundColor = UIColor.white
-        summaryTableView.tableFooterView?.backgroundColor = UIColor.white
         infoTableView.layer.cornerRadius = 8
+
+        summaryTableView.register(UINib(nibName: "TicketInfoCell", bundle: bundle), forCellReuseIdentifier: "TicketInfoCell")
+        summaryTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: summaryTableView.frame.size.width, height: 1))
+        summaryTableView.tableFooterView?.backgroundColor = UIColor.white
         summaryTableView.layer.cornerRadius = 8
+
         contactDetailsView.layer.cornerRadius = 8
         paymentView.layer.cornerRadius = 8
 
