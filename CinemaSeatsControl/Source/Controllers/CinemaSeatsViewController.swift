@@ -141,14 +141,7 @@ private extension CinemaSeatsViewController {
         cinemaSheduleCollectionView.showsHorizontalScrollIndicator = false
         cinemaSheduleCollectionView.backgroundColor = UIColor.clear
         cinemaSheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: CinemaSeatsViewController.self).url(forResource: "CinemaSeats", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        cinemaSheduleCollectionView.register(UINib(nibName: "CinemaSheduleCell", bundle: bundle), forCellWithReuseIdentifier: "CinemaSheduleCell")
+        cinemaSheduleCollectionView.register(UINib(nibName: "CinemaSheduleCell", bundle: Bundle.findBundleIfNeeded(for: CinemaSheduleCell.self)), forCellWithReuseIdentifier: "CinemaSheduleCell")
 
         let cinemaSheduleContainer = UIView(frame: cinemaSheduleCollectionView.bounds)
         cinemaSheduleContainer.backgroundColor = UIColor.clear
@@ -231,15 +224,7 @@ private extension CinemaSeatsViewController {
         let ticketInfo: [Info] = [Info(title: NSLocalizedString("\(selectedSeats) tickets", comment: ""), value: "\(currency) USD"),
                                  Info(title: NSLocalizedString("Convenience fee", comment: ""), value: "\(convinience) USD"),
                                  Info(title: NSLocalizedString("Total", comment: ""), value: "\(currency + convinience) USD")]
-
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: PaymentViewController.self).url(forResource: "CinemaSeats", withExtension: "bundle"),
-        let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        let viewController = PaymentViewController(nibName: "PaymentViewController", bundle: bundle)
+        let viewController = PaymentViewController(nibName: "PaymentViewController", bundle: Bundle.findBundleIfNeeded(for: PaymentViewController.self))
         viewController.modalPresentationStyle = .fullScreen
         viewController.paymentInfo = paymentInfo
         viewController.ticketInfo = ticketInfo
