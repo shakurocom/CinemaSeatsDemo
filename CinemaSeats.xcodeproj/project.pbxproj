@@ -24,7 +24,6 @@
 		6BC2939F286AF120007B54E2 /* SeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29391286AF120007B54E2 /* SeatModel.swift */; };
 		6BC293A0286AF120007B54E2 /* TicketInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29392286AF120007B54E2 /* TicketInfoCell.swift */; };
 		6BC293A1286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29393286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift */; };
-		6BC293A2286AF120007B54E2 /* Cinema.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC29394286AF120007B54E2 /* Cinema.storyboard */; };
 		6BC293A3286AF120007B54E2 /* CinemaSheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC29395286AF120007B54E2 /* CinemaSheduleCell.xib */; };
 		6BC293A4286AF120007B54E2 /* CinemaStyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */; };
 		6BC293AA286AF792007B54E2 /* UIImage+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC293A8286AF792007B54E2 /* UIImage+Bundle.swift */; };
@@ -62,7 +61,6 @@
 		6BC29391286AF120007B54E2 /* SeatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatModel.swift; sourceTree = "<group>"; };
 		6BC29392286AF120007B54E2 /* TicketInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoCell.swift; sourceTree = "<group>"; };
 		6BC29393286AF120007B54E2 /* UIViewController+DissmissKeyboardOnTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DissmissKeyboardOnTap.swift"; sourceTree = "<group>"; };
-		6BC29394286AF120007B54E2 /* Cinema.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cinema.storyboard; sourceTree = "<group>"; };
 		6BC29395286AF120007B54E2 /* CinemaSheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CinemaSheduleCell.xib; sourceTree = "<group>"; };
 		6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinemaStyleSheet.swift; sourceTree = "<group>"; };
 		6BC293A8286AF792007B54E2 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 		6B5A1085286B3B4100EBE921 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6BC29394286AF120007B54E2 /* Cinema.storyboard */,
 				6B1E57CC286AEFEE00FF82C5 /* LaunchScreen.storyboard */,
 			);
 			path = UI;
@@ -330,7 +327,6 @@
 			files = (
 				6B5A1084286B23A500EBE921 /* TicketInfoCell.xib in Resources */,
 				6B5A1083286B23A100EBE921 /* InfoCell.xib in Resources */,
-				6BC293A2286AF120007B54E2 /* Cinema.storyboard in Resources */,
 				6B1E57CE286AEFEE00FF82C5 /* LaunchScreen.storyboard in Resources */,
 				6BC293C3286B1488007B54E2 /* CinemaSeatsViewController.xib in Resources */,
 				6BC293B2286AFB22007B54E2 /* Poppins-Bold.ttf in Resources */,
@@ -557,7 +553,6 @@
 				INFOPLIST_FILE = CinemaSeatsDemo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Cinema;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -588,7 +583,6 @@
 				INFOPLIST_FILE = CinemaSeatsDemo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Cinema;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
