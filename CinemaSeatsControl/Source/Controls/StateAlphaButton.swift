@@ -2,6 +2,7 @@ import UIKit
 
 class StateAlphaButton: UIButton {
 
+    /// Alpha button in selected state.
     var selectedAlpha: CGFloat?
 
     override var isHighlighted: Bool {

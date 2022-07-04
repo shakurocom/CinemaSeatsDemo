@@ -12,8 +12,13 @@ class Seat: HitTestButton {
     var price: CGFloat = 0.0
 }
 
+/// Delegate of the seat selector.
 protocol SeatSelectorDelegate: AnyObject {
+
+    /// Called when a seat is selected.
     func seatSelected(_ seat: Seat)
+
+    /// Transfers selected seats every time one seat is selected.
     func getSelectedSeats(_ seats: [Seat])
 }
 
@@ -93,11 +98,13 @@ class SeatSelector: UIScrollView, UIScrollViewDelegate {
         }
     }
 
+    /// Sets the seat size.
     func setSeatSize(_ size: CGSize) {
         seatWidth = size.width
         seatHeight = size.height
     }
 
+    /// Sets an array of available seats.
     func setupSeats(_ seats: [SeatModel]) {
         allSeats.forEach({ $0.removeFromSuperview() })
         allSeats.removeAll()
@@ -170,8 +177,7 @@ class SeatSelector: UIScrollView, UIScrollViewDelegate {
         }
     }
 
-    // MARK: - Seat Images & Availability
-
+    /// Seat Images & Availability.
     func setSeatsImage(_ availableImage: UIImage?, unavailableImage: UIImage?, selectedImage: UIImage?) {
         self.availableImage = availableImage
         self.unavailableImage = unavailableImage

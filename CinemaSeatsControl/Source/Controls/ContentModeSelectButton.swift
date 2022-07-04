@@ -6,9 +6,16 @@ import UIKit
 
 class ContentModeSelectButton: StateAlphaButton {
 
+    /// Tint color button in selected state.
     var selectedTintColor: UIColor?
+
+    /// Tint color button in normal state.
     var normalTintColor: UIColor?
+
+    /// Backround color in selected state.
     var selectedBackgroundColor: UIColor?
+
+    /// Background color in normal state.
     var normalBackgroundColor: UIColor?
 
     override var isSelected: Bool {

@@ -1,8 +1,6 @@
 //
 //  UIImage+Bundle.swift
 //
-//  Created by Eugene Klyuenkov.
-//
 
 import UIKit
 

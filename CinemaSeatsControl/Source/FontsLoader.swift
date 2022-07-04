@@ -1,8 +1,6 @@
 //
 //  FontsLoader.swift
 //
-//  Created by Eugene Klyuenkov on 28.06.2022.
-//
 
 import Foundation
 import UIKit
@@ -34,6 +32,7 @@ public class FontsLoader {
 
     /**
      Downloads the necessary fonts for demo from the pod build.
+     Call the method in 'application(_ application:, didFinishLaunchingWithOptions launchOptions:)'.
      */
     public static func loadFonts() {
         let fonts: [(name: String, fontExtension: String)] = [
