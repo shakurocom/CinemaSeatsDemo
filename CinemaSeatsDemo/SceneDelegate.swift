@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         let window = UIWindow(windowScene: windowScene)
-        let viewController = CinemaSeatsViewController(nibName: "CinemaSeatsViewController", bundle: nil)
+        let viewController = DemoContainerViewController(nibName: "DemoContainerViewController", bundle: nil)
         window.rootViewController = viewController
         window.makeKeyAndVisible()
         self.window = window
