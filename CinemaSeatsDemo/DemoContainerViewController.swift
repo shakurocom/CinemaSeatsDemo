@@ -17,7 +17,7 @@ class DemoContainerViewController: ContainerViewController {
 
     @IBOutlet private var layoutContainer: UIView!
 
-    private var isScalingEnabled: Bool = true
+    private var isScalingEnabled: Bool = false
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return currentViewController?.preferredStatusBarStyle ?? super.preferredStatusBarStyle
