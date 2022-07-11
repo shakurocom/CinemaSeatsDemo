@@ -10,9 +10,9 @@ final class CinemaSeatsBundleHelper {
     /// Return the current bundle.
     static let bundle: Bundle = {
         let cinemaSeatsBundle = Bundle(for: CinemaSeatsViewController.self)
-        if let thermostatBundleURL = cinemaSeatsBundle.url(forResource: "CinemaSeats", withExtension: "bundle"),
-           let thermostatBundleInternal = Bundle(url: thermostatBundleURL) {
-            return thermostatBundleInternal
+        if let cinemaSeatsBundleURL = cinemaSeatsBundle.url(forResource: "CinemaSeats", withExtension: "bundle"),
+           let cinemaSeatsBundleInternal = Bundle(url: cinemaSeatsBundleURL) {
+            return cinemaSeatsBundleInternal
         } else {
             return cinemaSeatsBundle
         }
