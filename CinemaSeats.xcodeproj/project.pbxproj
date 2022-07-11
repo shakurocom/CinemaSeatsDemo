@@ -169,14 +169,8 @@
 		6B1E57D7286AF04B00FF82C5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */,
-				6BC293B7286AFB3B007B54E2 /* FontsLoader.swift */,
-				6BC29389286AF11F007B54E2 /* MovieInfo.swift */,
-				6BC29391286AF120007B54E2 /* SeatModel.swift */,
-				6BC293A7286AF698007B54E2 /* Cells */,
+				6BE772F4287C3CF3000ED5FB /* Common */,
 				6BC293A6286AF67E007B54E2 /* Controllers */,
-				6BC293BD286B0545007B54E2 /* Controls */,
-				6BC293A5286AF149007B54E2 /* Extensions */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -272,6 +266,20 @@
 				6BC293BB286B0537007B54E2 /* StateAlphaButton.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		6BE772F4287C3CF3000ED5FB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6BC29396286AF120007B54E2 /* CinemaStyleSheet.swift */,
+				6BC293B7286AFB3B007B54E2 /* FontsLoader.swift */,
+				6BC29389286AF11F007B54E2 /* MovieInfo.swift */,
+				6BC29391286AF120007B54E2 /* SeatModel.swift */,
+				6BC293A7286AF698007B54E2 /* Cells */,
+				6BC293BD286B0545007B54E2 /* Controls */,
+				6BC293A5286AF149007B54E2 /* Extensions */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
