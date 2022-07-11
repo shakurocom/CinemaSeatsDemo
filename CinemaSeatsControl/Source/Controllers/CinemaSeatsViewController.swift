@@ -17,6 +17,19 @@ public class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
         static let seatPrice: CGFloat = 10.0
     }
 
+    public static func loadFromNib() -> CinemaSeatsViewController {
+        let fonts: [(fontName: String, fontExtension: String)] = [
+            (fontName: "Poppins-Bold", fontExtension: "ttf"),
+            (fontName: "Poppins-Light", fontExtension: "ttf"),
+            (fontName: "Poppins-Medium", fontExtension: "ttf"),
+            (fontName: "Poppins-SemiBold", fontExtension: "ttf"),
+            (fontName: "Poppins-Regular", fontExtension: "ttf")
+        ]
+        CinemaSeatsBundleHelper.registerFonts(fonts)
+        let viewController = CinemaSeatsViewController(nibName: "CinemaSeatsViewController", bundle: CinemaSeatsBundleHelper.bundle)
+        return viewController
+    }
+
     @IBOutlet private var backButton: UIButton!
     @IBOutlet private var buyButton: UIButton!
 
@@ -141,7 +154,8 @@ private extension CinemaSeatsViewController {
         cinemaSheduleCollectionView.showsHorizontalScrollIndicator = false
         cinemaSheduleCollectionView.backgroundColor = UIColor.clear
         cinemaSheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        cinemaSheduleCollectionView.register(UINib(nibName: "CinemaSheduleCell", bundle: Bundle.findBundleIfNeeded(for: CinemaSheduleCell.self)), forCellWithReuseIdentifier: "CinemaSheduleCell")
+        cinemaSheduleCollectionView.register(UINib(nibName: "CinemaSheduleCell", bundle: CinemaSeatsBundleHelper.bundle),
+                                             forCellWithReuseIdentifier: "CinemaSheduleCell")
 
         let cinemaSheduleContainer = UIView(frame: cinemaSheduleCollectionView.bounds)
         cinemaSheduleContainer.backgroundColor = UIColor.clear
@@ -200,7 +214,9 @@ private extension CinemaSeatsViewController {
 
     func setupSeats() {
         seatSelector.setSeatSize(CGSize(width: 10, height: 10))
-        seatSelector.setSeatsImage(UIImage.loadImageFromBundle(name: "availableSeat"), unavailableImage: UIImage.loadImageFromBundle(name: "unavailableSeat"), selectedImage: UIImage.loadImageFromBundle(name: "selectedSeat"))
+        seatSelector.setSeatsImage(CinemaSeatsBundleHelper.readImage(named: "availableSeat"),
+                                   unavailableImage: CinemaSeatsBundleHelper.readImage(named: "unavailableSeat"),
+                                   selectedImage: CinemaSeatsBundleHelper.readImage(named: "selectedSeat"))
         seatSelector.setupSeats(SeatModel.generate(for: info.sheduleDates[selectedTimeIndex]))
         seatSelector.seatSelectorDelegate = self
         seatSelector.minimumZoomScale = Constant.minimumFontScale
@@ -224,7 +240,7 @@ private extension CinemaSeatsViewController {
         let ticketInfo: [Info] = [Info(title: NSLocalizedString("\(selectedSeats) tickets", comment: ""), value: "\(currency) USD"),
                                  Info(title: NSLocalizedString("Convenience fee", comment: ""), value: "\(convinience) USD"),
                                  Info(title: NSLocalizedString("Total", comment: ""), value: "\(currency + convinience) USD")]
-        let viewController = PaymentViewController(nibName: "PaymentViewController", bundle: Bundle.findBundleIfNeeded(for: PaymentViewController.self))
+        let viewController = PaymentViewController.loadFromNib()
         viewController.modalPresentationStyle = .fullScreen
         viewController.paymentInfo = paymentInfo
         viewController.ticketInfo = ticketInfo

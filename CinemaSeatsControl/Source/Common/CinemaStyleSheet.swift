@@ -9,10 +9,10 @@ public enum CinemaStyleSheet {
     // MARK: - Colors
 
     enum Color {
-        static let black: UIColor = UIColor.loadColorFromBundle(name: "TitleText") ?? .clear
-        static let gray: UIColor = UIColor.loadColorFromBundle(name: "SubtitleText") ?? .clear
-        static let background: UIColor = UIColor.loadColorFromBundle(name: "CinemaBackground") ?? .clear
-        static let sheduleButtonBackground: UIColor = UIColor.loadColorFromBundle(name: "BlueButton") ?? .clear
+        static let black: UIColor = CinemaSeatsBundleHelper.readColor(named: "TitleText") ?? .clear
+        static let gray: UIColor = CinemaSeatsBundleHelper.readColor(named: "SubtitleText") ?? .clear
+        static let background: UIColor = CinemaSeatsBundleHelper.readColor(named: "CinemaBackground") ?? .clear
+        static let sheduleButtonBackground: UIColor = CinemaSeatsBundleHelper.readColor(named: "BlueButton") ?? .clear
     }
 
     // MARK: - Fonts

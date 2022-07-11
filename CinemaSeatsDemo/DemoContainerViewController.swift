@@ -55,7 +55,7 @@ class DemoContainerViewController: ContainerViewController {
     }
 
     private func showDemo() {
-        let viewController = CinemaSeatsViewController(nibName: "CinemaSeatsViewController", bundle: nil)
+        let viewController = CinemaSeatsViewController.loadFromNib()
         let bgColor = UIColor(hex: "#FFFFFF")
 
         view.backgroundColor = bgColor

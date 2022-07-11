@@ -13,9 +13,9 @@ class TicketInfoCell: UITableViewCell {
         super.awakeFromNib()
 
         titleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(14)
-        titleLabel.textColor = UIColor.loadColorFromBundle(name: "Cinema400")
+        titleLabel.textColor = CinemaSeatsBundleHelper.readColor(named: "Cinema400")
         subtitleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(14)
-        subtitleLabel.textColor = UIColor.loadColorFromBundle(name: "cDark")
+        subtitleLabel.textColor = CinemaSeatsBundleHelper.readColor(named: "cDark")
     }
 
     func setInfo(info: Info?) {
@@ -25,9 +25,9 @@ class TicketInfoCell: UITableViewCell {
 
     func setUI() {
         titleLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(16)
-        titleLabel.textColor = UIColor.loadColorFromBundle(name: "cDark")
+        titleLabel.textColor = CinemaSeatsBundleHelper.readColor(named: "cDark")
         subtitleLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(16)
-        subtitleLabel.textColor = UIColor.loadColorFromBundle(name: "cDark")
+        subtitleLabel.textColor = CinemaSeatsBundleHelper.readColor(named: "cDark")
     }
 
 }
