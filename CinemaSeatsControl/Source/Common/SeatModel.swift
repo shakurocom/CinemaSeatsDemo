@@ -24,8 +24,8 @@ class SeatModel {
 
     static func generate(for time: Time) -> [SeatModel] {
         // swiftlint:disable identifier_name
-        let a = SeatModel(type: .available, image: CinemaSeatsBundleHelper.readImage(named: "availableSeat"), currency: 10)
-        let u = SeatModel(type: .unavailable, image: CinemaSeatsBundleHelper.readImage(named: "unavailableSeat"), currency: 10)
+        let a = SeatModel(type: .available, image: CinemaSeatsBundleHelper.image(named: "availableSeat"), currency: 10)
+        let u = SeatModel(type: .unavailable, image: CinemaSeatsBundleHelper.image(named: "unavailableSeat"), currency: 10)
         let e = SeatModel(type: .empty)
 
         switch time {

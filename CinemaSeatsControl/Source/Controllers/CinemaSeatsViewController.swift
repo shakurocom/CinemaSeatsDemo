@@ -18,16 +18,7 @@ public class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
     }
 
     public static func loadFromNib() -> CinemaSeatsViewController {
-        let fonts: [(fontName: String, fontExtension: String)] = [
-            (fontName: "Poppins-Bold", fontExtension: "ttf"),
-            (fontName: "Poppins-Light", fontExtension: "ttf"),
-            (fontName: "Poppins-Medium", fontExtension: "ttf"),
-            (fontName: "Poppins-SemiBold", fontExtension: "ttf"),
-            (fontName: "Poppins-Regular", fontExtension: "ttf")
-        ]
-        CinemaSeatsBundleHelper.registerFonts(fonts)
-        let viewController = CinemaSeatsViewController(nibName: "CinemaSeatsViewController", bundle: CinemaSeatsBundleHelper.bundle)
-        return viewController
+        return CinemaSeatsBundleHelper.instantiateViewController(targetClass: CinemaSeatsViewController.self, nibName: "CinemaSeatsViewController")
     }
 
     @IBOutlet private var backButton: UIButton!
@@ -154,7 +145,7 @@ private extension CinemaSeatsViewController {
         cinemaSheduleCollectionView.showsHorizontalScrollIndicator = false
         cinemaSheduleCollectionView.backgroundColor = UIColor.clear
         cinemaSheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        cinemaSheduleCollectionView.register(UINib(nibName: "CinemaSheduleCell", bundle: CinemaSeatsBundleHelper.bundle),
+        cinemaSheduleCollectionView.register(CinemaSeatsBundleHelper.loadNib(name: "CinemaSheduleCell"),
                                              forCellWithReuseIdentifier: "CinemaSheduleCell")
 
         let cinemaSheduleContainer = UIView(frame: cinemaSheduleCollectionView.bounds)
@@ -214,9 +205,9 @@ private extension CinemaSeatsViewController {
 
     func setupSeats() {
         seatSelector.setSeatSize(CGSize(width: 10, height: 10))
-        seatSelector.setSeatsImage(CinemaSeatsBundleHelper.readImage(named: "availableSeat"),
-                                   unavailableImage: CinemaSeatsBundleHelper.readImage(named: "unavailableSeat"),
-                                   selectedImage: CinemaSeatsBundleHelper.readImage(named: "selectedSeat"))
+        seatSelector.setSeatsImage(CinemaSeatsBundleHelper.image(named: "availableSeat"),
+                                   unavailableImage: CinemaSeatsBundleHelper.image(named: "unavailableSeat"),
+                                   selectedImage: CinemaSeatsBundleHelper.image(named: "selectedSeat"))
         seatSelector.setupSeats(SeatModel.generate(for: info.sheduleDates[selectedTimeIndex]))
         seatSelector.seatSelectorDelegate = self
         seatSelector.minimumZoomScale = Constant.minimumFontScale

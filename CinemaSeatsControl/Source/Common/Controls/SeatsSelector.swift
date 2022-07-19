@@ -156,7 +156,7 @@ class SeatSelector: UIScrollView, UIScrollViewDelegate {
             label.textAlignment = .center
 
             let imageView: UIImageView = UIImageView()
-            imageView.image = CinemaSeatsBundleHelper.readImage(named: "CinemaScreen")
+            imageView.image = CinemaSeatsBundleHelper.image(named: "CinemaScreen")
 
             zoomableView.frame = CGRect(x: 0, y: 0, width: CGFloat(finalWidth) * seatWidth, height: CGFloat(initialSeatY) * seatHeight)
             zoomableView.center = center
@@ -305,13 +305,13 @@ private extension SeatSelector {
 
     func changeMode() {
         if isZoomed {
-            setSeatsImage(CinemaSeatsBundleHelper.readImage(named: "availableMidSeat"),
-                          unavailableImage: CinemaSeatsBundleHelper.readImage(named: "unavailableMidSeat"),
-                          selectedImage: CinemaSeatsBundleHelper.readImage(named: "selectedMidSeat"))
+            setSeatsImage(CinemaSeatsBundleHelper.image(named: "availableMidSeat"),
+                          unavailableImage: CinemaSeatsBundleHelper.image(named: "unavailableMidSeat"),
+                          selectedImage: CinemaSeatsBundleHelper.image(named: "selectedMidSeat"))
         } else {
-            setSeatsImage(CinemaSeatsBundleHelper.readImage(named: "availableSeat"),
-                          unavailableImage: CinemaSeatsBundleHelper.readImage(named: "unavailableSeat"),
-                          selectedImage: CinemaSeatsBundleHelper.readImage(named: "selectedSeat"))
+            setSeatsImage(CinemaSeatsBundleHelper.image(named: "availableSeat"),
+                          unavailableImage: CinemaSeatsBundleHelper.image(named: "unavailableSeat"),
+                          selectedImage: CinemaSeatsBundleHelper.image(named: "selectedSeat"))
         }
         updateSeats()
     }
