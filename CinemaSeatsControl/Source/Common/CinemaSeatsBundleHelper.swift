@@ -30,7 +30,7 @@ final class CinemaSeatsBundleHelper {
 
     /// Reads a color with the specified name from the bundle.
     /// - parameter named: color name.
-    static func readColor(named: String, compatibleWith: UITraitCollection? = nil) -> UIColor? {
+    static func color(named: String, compatibleWith: UITraitCollection? = nil) -> UIColor? {
         return bundleHelper.color(named: named, compatibleWith: compatibleWith)
     }
 
