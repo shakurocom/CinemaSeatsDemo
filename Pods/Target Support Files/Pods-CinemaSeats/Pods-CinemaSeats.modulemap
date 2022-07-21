@@ -1,0 +1,6 @@
+framework module Pods_CinemaSeats {
+  umbrella header "Pods-CinemaSeats-umbrella.h"
+
+  export *
+  module * { export * }
+}
