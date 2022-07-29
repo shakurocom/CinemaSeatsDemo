@@ -2,7 +2,7 @@ PODS:
   - Alamofire (5.1.0)
   - CommonCryptoModule (1.0.2)
   - pop (1.0.12)
-  - Shakuro.CommonTypes (1.1.2)
+  - Shakuro.CommonTypes (1.1.3)
   - Shakuro.iOS_Toolbox (0.22.0):
     - Shakuro.iOS_Toolbox/AsyncResult (= 0.22.0)
     - Shakuro.iOS_Toolbox/ContainerViewController (= 0.22.0)
@@ -98,7 +98,7 @@ SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  Shakuro.CommonTypes: d7145227330b0033eaecb2dd89a29cfe28b7c547
+  Shakuro.CommonTypes: 97a477905259f2ac278a999ad38af8dfa9dd6c87
   Shakuro.iOS_Toolbox: e9783546009b28be9abda7b471bbc8d7f358b6d6
 
 PODFILE CHECKSUM: 0ab4f1e57e7cbe6fa08612024118c583d5198867
