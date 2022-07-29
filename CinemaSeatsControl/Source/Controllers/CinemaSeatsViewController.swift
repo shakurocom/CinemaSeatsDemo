@@ -18,7 +18,7 @@ public class CinemaSeatsViewController: UIViewController, SeatSelectorDelegate {
     }
 
     public static func loadFromNib() -> CinemaSeatsViewController {
-        return CinemaSeatsBundleHelper.instantiateViewController(targetClass: CinemaSeatsViewController.self, nibName: "CinemaSeatsViewController")
+        return Bundle.cinemaSeatsBundleHelper.instantiateViewController(targetClass: CinemaSeatsViewController.self, nibName: "CinemaSeatsViewController")
     }
 
     @IBOutlet private var backButton: UIButton!
@@ -145,7 +145,7 @@ private extension CinemaSeatsViewController {
         cinemaSheduleCollectionView.showsHorizontalScrollIndicator = false
         cinemaSheduleCollectionView.backgroundColor = UIColor.clear
         cinemaSheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        cinemaSheduleCollectionView.register(CinemaSeatsBundleHelper.loadNib(name: "CinemaSheduleCell"),
+        cinemaSheduleCollectionView.register(Bundle.cinemaSeatsBundleHelper.loadNib(name: "CinemaSheduleCell"),
                                              forCellWithReuseIdentifier: "CinemaSheduleCell")
 
         let cinemaSheduleContainer = UIView(frame: cinemaSheduleCollectionView.bounds)
@@ -205,9 +205,9 @@ private extension CinemaSeatsViewController {
 
     func setupSeats() {
         seatSelector.setSeatSize(CGSize(width: 10, height: 10))
-        seatSelector.setSeatsImage(CinemaSeatsBundleHelper.image(named: "availableSeat"),
-                                   unavailableImage: CinemaSeatsBundleHelper.image(named: "unavailableSeat"),
-                                   selectedImage: CinemaSeatsBundleHelper.image(named: "selectedSeat"))
+        seatSelector.setSeatsImage(Bundle.cinemaSeatsBundleHelper.image(named: "availableSeat"),
+                                   unavailableImage: Bundle.cinemaSeatsBundleHelper.image(named: "unavailableSeat"),
+                                   selectedImage: Bundle.cinemaSeatsBundleHelper.image(named: "selectedSeat"))
         seatSelector.setupSeats(SeatModel.generate(for: info.sheduleDates[selectedTimeIndex]))
         seatSelector.seatSelectorDelegate = self
         seatSelector.minimumZoomScale = Constant.minimumFontScale

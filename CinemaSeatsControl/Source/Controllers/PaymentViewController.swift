@@ -23,7 +23,7 @@ class PaymentViewController: UIViewController {
     }
 
     public static func loadFromNib() -> PaymentViewController {
-        return CinemaSeatsBundleHelper.instantiateViewController(targetClass: PaymentViewController.self, nibName: "PaymentViewController")
+        return Bundle.cinemaSeatsBundleHelper.instantiateViewController(targetClass: PaymentViewController.self, nibName: "PaymentViewController")
     }
 
     @IBOutlet private var topView: UIView!
@@ -160,12 +160,12 @@ private extension PaymentViewController {
         topView.layer.cornerRadius = 32
         topView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 
-        infoTableView.register(CinemaSeatsBundleHelper.loadNib(name: "InfoCell"), forCellReuseIdentifier: "InfoCell")
+        infoTableView.register(Bundle.cinemaSeatsBundleHelper.loadNib(name: "InfoCell"), forCellReuseIdentifier: "InfoCell")
         infoTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: infoTableView.frame.size.width, height: 1))
         infoTableView.tableFooterView?.backgroundColor = UIColor.white
         infoTableView.layer.cornerRadius = 8
 
-        summaryTableView.register(CinemaSeatsBundleHelper.loadNib(name: "TicketInfoCell"), forCellReuseIdentifier: "TicketInfoCell")
+        summaryTableView.register(Bundle.cinemaSeatsBundleHelper.loadNib(name: "TicketInfoCell"), forCellReuseIdentifier: "TicketInfoCell")
         summaryTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: summaryTableView.frame.size.width, height: 1))
         summaryTableView.tableFooterView?.backgroundColor = UIColor.white
         summaryTableView.layer.cornerRadius = 8
