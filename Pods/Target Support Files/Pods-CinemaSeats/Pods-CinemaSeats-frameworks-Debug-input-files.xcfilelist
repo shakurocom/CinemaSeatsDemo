@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-CinemaSeats/Pods-CinemaSeats-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/CommonCryptoModule/CommonCryptoModule.framework
+${BUILT_PRODUCTS_DIR}/Shakuro.CommonTypes/Shakuro_CommonTypes.framework
+${BUILT_PRODUCTS_DIR}/Shakuro.iOS_Toolbox/Shakuro_iOS_Toolbox.framework
+${BUILT_PRODUCTS_DIR}/pop/pop.framework
