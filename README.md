@@ -10,7 +10,9 @@ CinemaSeats is a Swift component that represents choosing a seat and booking a t
 - [Installation](#installation)
 - [License](#license)
 
-With CinemaSeats, the user can pick several seats with a tap, select a certain period and book the tickets. The animation clearly represents occupied, available, and chosen seats for each hall. Below one can see a price for selected tickets.  
+With CinemaSeats, the user can pick several seats with a tap, select a certain period and book the tickets. The animation clearly represents occupied, available, and chosen seats for each hall. Below one can see a price for selected tickets.
+
+![](Resources/ticket-booking.gif)
 
 Here are the animations showing seats and time selections:
 
